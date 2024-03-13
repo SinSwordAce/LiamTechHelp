@@ -1,0 +1,21 @@
+footer {
+    border-style: solid hidden hidden hidden;
+    border-color: rgba(128, 128, 128, 0.250);
+    background-color: rgba(0, 0, 0, 0.750);
+    position: static;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h6 {
+    font-size: 14px;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+h5 {
+    font-size: 16px;
+    margin-top: 0;
+
+}

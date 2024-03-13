@@ -1,0 +1,43 @@
+.container1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    column-gap: 15px;
+    row-gap: 15px;
+}
+
+.box {
+    width: auto;
+    height: auto;
+    font-size: 0px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+#box1 {
+    border: 7px solid rgba(169, 169, 169, 0.250);
+    background: rgba(255, 255, 255, 0.050);
+}
+
+#box2 {
+    border: 7px solid rgba(169, 169, 169, 0.250);
+    background: rgba(255, 255, 255, 0.050);
+}
+
+#box3 {
+    border: 7px solid rgba(169, 169, 169, 0.250);
+    background: rgba(255, 255, 255, 0.050);
+}
+
+#box4 {
+    border: 7px solid rgba(169, 169, 169, 0.250);
+    background: rgba(255, 255, 255, 0.050);
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    column-gap: 15px;
+    row-gap: 15px;
+}
