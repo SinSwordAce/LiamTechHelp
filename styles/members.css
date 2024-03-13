@@ -20,7 +20,7 @@
     width: 800px;
     height: 400px;
     display: flex;
-    border-radius: 20px;
+    border-radius: 50px;
     border: 7px solid rgba(169, 169, 169, 0.250);
     background: rgba(255, 255, 255, 0.050);
 }
