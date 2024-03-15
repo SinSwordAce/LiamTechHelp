@@ -1,0 +1,38 @@
+.container {
+    display: grid;
+    align-items: center; 
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    gap: 250px;
+    margin: 10px;
+    border: 7px solid rgba(169, 169, 169, 0.250);
+    background: rgba(255, 255, 255, 0.050);
+    border-radius: 50px;
+}
+
+.container1 {
+    text-align: center;
+    margin: 10px;
+    border: 7px solid rgba(169, 169, 169, 0.250);
+    background: rgba(255, 255, 255, 0.050);
+    border-radius: 50px;
+}
+
+h2 {
+    font-size: 50px;
+    text-align: center;
+    margin: 10px;
+    border: 7px solid rgba(169, 169, 169, 0.250);
+    background: rgba(255, 255, 255, 0.050);
+    border-radius: 50px;
+}
+
+.text {
+    font-size: 40px;
+    text-align: center;
+}
+
+
+.text1 {
+    font-size: 35px;
+}

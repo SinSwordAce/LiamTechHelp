@@ -1,4 +1,6 @@
-
+main {
+    text-align: center;
+}
 
 .flexbox {
     width: 600px;
@@ -17,27 +19,17 @@
     justify-content: center;
 }
 
-.grid {
-    width: 600px;
-    height: 300px;
-    display: grid;
-    grid-template-columns: repeat(2,1fr); 
-    gap: 50px;
-    border: 7px solid rgba(169, 169, 169, 0.250);
-    background: rgba(255, 255, 255, 0.050);
-    border-radius: 50px;
+.flexboxp2 {
+    max-width: 800px;
+    min-height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
   }
-
-.role {
-    justify-content: center;
-    text-align: center;
-
-}
 
 .box {
     width: 600px;
     height: 300px;
-    display: flex;
     border-radius: 50px;
     border: 7px solid rgba(169, 169, 169, 0.250);
     background: rgba(255, 255, 255, 0.050);
