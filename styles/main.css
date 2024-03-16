@@ -1,5 +1,8 @@
 body {
-    background-image: url(../background/fullback_1.webp);
+    background-image: image-set(
+    '../background/fullback_1.low.webp' 1x,
+    '../background/fullback_1.webp' 2x
+  );
     background-size: cover;
     margin: 0px;
   }
