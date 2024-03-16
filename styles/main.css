@@ -8,8 +8,12 @@ body {
   }
 
 main {
-  background-image: url(../background/fullback_2.1.webp);
-  background-repeat:repeat-y;
+  background-image: image-set(
+    '../background/fullback_2.1.low.webp' 1x,
+    '../background/fullback_2.1.webp' 2x
+  );
+  background-size: cover;
+  background-repeat:repeat;
   margin-right: 40px;
   margin-left: 40px;
   padding-top: 25px;
