@@ -25,6 +25,8 @@ h2 {
     border: 7px solid rgba(169, 169, 169, 0.250);
     background: rgba(255, 255, 255, 0.050);
     border-radius: 50px;
+    margin-right: 100px;
+    margin-left: 100px;
 }
 
 .text {
