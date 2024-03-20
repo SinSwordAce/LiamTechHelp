@@ -15,6 +15,26 @@
     background: rgba(255, 255, 255, 0.050);
 }
 
+.minibox {
+    width: auto;
+    height: 394px;
+    text-align: center;
+    border-radius: 13.2px;
+    border: 3px solid rgba(169, 169, 169, 0.250);
+}
+
+.bigbox {
+    width: auto;
+    height: auto;
+    text-align: center;
+    border-radius: 10px;
+    border: 10px solid rgba(169, 169, 169, 0.250);
+    background: rgba(255, 255, 255, 0.050);
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 h1 {
     font-size: 50px;
     text-align: center;
@@ -22,6 +42,18 @@ h1 {
     border: 7px solid rgba(169, 169, 169, 0.250);
     background: rgba(255, 255, 255, 0.050);
     border-radius: 50px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+#com {
+    font-size: 50px;
+    text-align: center;
+    margin: 10px;
+    border: 10px solid rgba(169, 169, 169, 0.250);
+    background: rgba(255, 255, 255, 0.050);
+    border-radius: 50px;
+    margin-top: 5px;
     margin-right: 100px;
     margin-left: 100px;
 }
