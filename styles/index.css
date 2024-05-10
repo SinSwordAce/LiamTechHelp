@@ -22,7 +22,7 @@
 }
 
 h2 {
-    font-size: 50px;
+    font-size: 70px;
     text-align: center;
     margin: 10px;
     border: 7px solid rgba(169, 169, 169, 0.25);
@@ -32,7 +32,13 @@ h2 {
     margin-left: 100px;
 }
 
-.text {
+.text1 {
+    margin-left: 50px;
+    font-size: 60px;
+    text-align: center;
+}
+
+.text2 {
     margin-left: 50px;
     margin-right: 50px;
     font-size: 40px;

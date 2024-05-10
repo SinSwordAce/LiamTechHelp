@@ -1,11 +1,11 @@
-#navbar {
-    text-align: left;
-    font-size: 0;
+.logo {
+    margin: 10px;
+    text-decoration: none;
 }
 
 .nav {
-    padding: 5px;
-    margin: 5px;
+    margin: 150px;
+    text-decoration: none;
 }
 
 .navbar ul {
@@ -26,9 +26,12 @@
     padding: 5px;
     display: block;
     text-align: center;
-    
 }
 
 .logo {
     width: 35px;
+}
+
+.nav img {
+    height: 80px;
 }
