@@ -3,7 +3,7 @@
     align-items: center; 
     grid-template-columns: 1fr 1fr;
     column-gap: 50px;
-    gap: 250px;
+    gap: 50px;
     margin-left: 100px;
     margin-right: 100px;
     border: 7px solid rgba(169, 169, 169, 0.25);
@@ -22,7 +22,7 @@
 }
 
 h2 {
-    font-size: 70px;
+    font-size: 50px;
     text-align: center;
     margin: 10px;
     border: 7px solid rgba(169, 169, 169, 0.25);
@@ -34,13 +34,13 @@ h2 {
 
 .text1 {
     margin-left: 50px;
-    font-size: 60px;
+    font-size: 40px;
     text-align: center;
 }
 
 .text2 {
     margin-left: 50px;
     margin-right: 50px;
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
 }
