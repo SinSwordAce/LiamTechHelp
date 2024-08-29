@@ -8,10 +8,13 @@ body {
   }
 
 main {
-  background-size: cover;
-  background-repeat:repeat;
   padding-top: 20px;
   padding-bottom: 50px;
   color: white;
-  font-size: 25px;
 } 
+
+@media (min-width: 375px) {
+  p {
+    font-size: 1.25em;
+  }
+}

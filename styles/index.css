@@ -1,46 +1,40 @@
+/* Title */
+.title {
+    border: 0.2em solid rgba(169, 169, 169, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3em;
+    margin-bottom: 0.5em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.title1 {
+    font-size: 4em;
+    text-align: center;
+    margin: 0em;
+}
+
+/* First Box */
 .container {
     display: grid;
     align-items: center; 
     grid-template-columns: 1fr 1fr;
-    column-gap: 50px;
-    gap: 50px;
-    margin-left: 100px;
-    margin-right: 100px;
-    border: 7px solid rgba(169, 169, 169, 0.25);
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 50px;
-}
-
-.container1 {
-    text-align: center;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 10px;
-    border: 7px solid rgba(169, 169, 169, 0.25);
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 50px;
-}
-
-h2 {
-    font-size: 50px;
-    text-align: center;
-    margin: 10px;
-    border: 7px solid rgba(169, 169, 169, 0.25);
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 50px;
-    margin-right: 100px;
-    margin-left: 100px;
+    gap: 1em;
+    border: 0.2em solid rgba(169, 169, 169, 0.25);
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 3em;
+    margin-bottom: 0.1em;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
 }
 
 .text1 {
-    margin-left: 50px;
-    font-size: 40px;
+    font-size: 2.5em;
     text-align: center;
 }
 
-.text2 {
-    margin-left: 50px;
-    margin-right: 50px;
-    font-size: 30px;
-    text-align: center;
+.image1 {
+
 }
+
+/*  */
