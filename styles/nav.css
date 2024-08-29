@@ -1,14 +1,37 @@
-.logo {
-    margin: 5px;
-    text-decoration: none;
+/* Header Nav */
+.navbar ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    font-size: 28px;
 }
 
-.nav {
-    margin: 40px;
+.navbar a {
+    color: white;
     text-decoration: none;
+    padding: 15px 50px 15px 50px;
+    display: block;
+    text-align: center;
+    border-radius: 20px;
+    border-style: ridge;
+    border-width: 5px;
+    border-color: white;
+    border-radius: 20px;
+    margin-right: 50px;
 }
 
-.navbar ul {
+.navbar a:hover {
+    background-color: lightcoral;
+}
+
+.navbar li {
+    float: left;
+    padding: 0px;
+}
+
+/* Footer Nav */
+.fnavbar ul {
     list-style-type: none;
     padding: 0px;
     margin-top: 0px;
@@ -19,19 +42,11 @@
     font-size: 12px;
 }
 
-.navbar a {
+.fnavbar a {
     width: 100%;
     color: white;
     text-decoration: none;
     padding: 5px;
     display: block;
     text-align: center;
-}
-
-.logo {
-    width: 35px;
-}
-
-.nav img {
-    height: 80px;
 }
