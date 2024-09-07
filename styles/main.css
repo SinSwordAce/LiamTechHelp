@@ -8,9 +8,10 @@ body {
   }
 
 main {
-  padding-top: 20px;
-  padding-bottom: 50px;
+  padding-top: 1vh;
+  min-height: auto;
   color: white;
+  
 } 
 
 @media (min-width: 375px) {

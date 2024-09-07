@@ -1,24 +1,26 @@
 /* Header Nav */
+
 .navbar ul{
     list-style: none;
     padding: 0px;
     margin: 0px;
     overflow: hidden;
-    font-size: 28px;
+    font-size: 20px;
+    height: auto;
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
-    padding: 15px 50px 15px 50px;
+    padding: 1vh 2vh;
     display: block;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 1vh;
     border-style: ridge;
-    border-width: 5px;
+    border-width: 0.25vh;
     border-color: white;
     border-radius: 20px;
-    margin-right: 50px;
+    margin: 0vh 1vh;
 }
 
 .navbar a:hover {
