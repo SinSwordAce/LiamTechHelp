@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en" style="font-family: montserrat;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/profile.css') }}">
+    <title>LTH - Profile</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.ico') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ url_for('home') }}"><b>HOME</b></a></li>
+                <li><a href="{{ url_for('account_settings') }}"><b>ACCOUNT SETTINGS</b></a></li>
+                <li><a href="{{ url_for('logout') }}"><b>LOGOUT</b></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="profile-container">
+            <div class="profile-picture">
+                {% if user.profile_pic %}
+                    <img src="{{ url_for('static', filename='uploads/' + user.profile_pic) }}" alt="Profile Picture">
+                {% else %}
+                    <img src="{{ url_for('static', filename='logo.ico') }}" alt="Default Profile Picture">
+                {% endif %}
+            </div>
+            <h2>{{ user.username }}</h2>
+            <h3>{{ user.email }}</h3>
+            <p>{{ user.bio | safe }}</p>
+            <form method="POST" enctype="multipart/form-data" class="profile-edit-form">
+                <div>
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio" name="bio">{{ user.bio }}</textarea>
+                </div>
+                <div>
+                    <label for="profile_pic">Profile Picture:</label>
+                    <input type="file" id="profile_pic" name="profile_pic">
+                </div>
+                <button type="submit">Update Profile</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

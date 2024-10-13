@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en" style="font-family: montserrat;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Get in touch with Liam's Tech Help">
+    <meta name="keywords" content="contact, tech help, Liam's Tech Help">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/contact.css') }}">
+    <title>LTH - Contact</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.ico') }}">
+</head>
+<body>
+	<header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ url_for('home') }}"><b>HOME</b></a></li>
+                <li><a href="{{ url_for('info') }}"><b>INFO</b></a></li>
+                <li><a href="{{ url_for('contact') }}"><b>CONTACT</b></a></li>
+                {% if logged_in %}
+					<li><a href="{{ url_for('profile') }}"><b>PROFILE</b></a></li>
+                    <li><a href="{{ url_for('logout') }}"><b>LOGOUT</b></a></li>
+                {% else %}
+                    <li><a href="{{ url_for('register') }}"><b>REGISTER</b></a></li>
+                    <li><a href="{{ url_for('login') }}"><b>LOGIN</b></a></li>
+                {% endif %}
+            </ul>
+        </nav>
+	</header>
+	<main>
+		<div class="container1">
+			<div class="box" id="box1">
+				<P id="text1">Email/Gmail/Mail...</P>
+					<img src="{{ url_for('static', filename='images/email.webp') }}" alt="email Logo"  height="150px">
+				<p id="text2">liamstechhelp@gmail.com</p>
+			</div>
+			<div class="box" id="box2">
+				<P id="text1">LTH Facebook Page!</P>
+				<a class="LTH-page" href="https://www.facebook.com/LiamTechHelp" target="_blank" title="LTH Facebook Page">
+					<img src="{{ url_for('static', filename='images/LTH.webp') }}" alt="logo" height="150px"> </a>
+				<p id="text2">I'm always active on the facebook page</p>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

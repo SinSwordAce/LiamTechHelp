@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" style="font-family: montserrat;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/profile.css') }}">
+    <title>LTH - Login</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.ico') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ url_for('home') }}"><b>HOME</b></a></li>
+                <li><a href="{{ url_for('info') }}"><b>INFO</b></a></li>
+                <li><a href="{{ url_for('contact') }}"><b>CONTACT</b></a></li>
+                {% if logged_in %}
+                    <li><a href="{{ url_for('profile') }}"><b>PROFILE</b></a></li>
+                    <li><a href="{{ url_for('logout') }}"><b>LOGOUT</b></a></li>
+                {% else %}
+                    <li><a href="{{ url_for('register') }}"><b>REGISTER</b></a></li>
+                    <li><a href="{{ url_for('login') }}"><b>LOGIN</b></a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Login</h1>
+        <form method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </main>
+</body>
+</html>

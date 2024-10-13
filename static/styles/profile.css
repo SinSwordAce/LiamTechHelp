@@ -1,0 +1,66 @@
+.profile-container {
+    text-align: center;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #333; /* For a nice border effect */
+    object-fit: cover;
+}
+
+.profile-edit-form {
+    margin-top: 20px;
+    display: inline-block;
+    text-align: left;
+}
+
+form div {
+    margin-bottom: 1rem;
+}
+
+.account-settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.account-settings form {
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+    border: 1px solid white; /* Thin white border */
+    padding: 50px;
+    border-radius: 10px; /* Optional: rounded corners */
+    text-align: center; /* Center form elements */
+}
+
+.account-settings form h2 {
+    margin-bottom: 20px;
+}
+
+.account-settings form label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left; /* Align labels to the left */
+}
+
+.account-settings form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.account-settings form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.account-settings form button:hover {
+    background-color: #555;
+}
