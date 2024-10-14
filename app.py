@@ -2,8 +2,10 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
+from datetime import datetime, timedelta
 import os
 import time
+
 
 app = Flask(__name__)
 app.secret_key = '18921892'
@@ -31,6 +33,8 @@ class User(db.Model):
     password_hash = db.Column(db.String(128), nullable=False)
     bio = db.Column(db.Text, nullable=True)
     profile_pic = db.Column(db.String(120), nullable=True)
+    session_start = db.Column(db.DateTime, nullable=True)
+    total_time = db.Column(db.Interval, default=timedelta(0))
 
     def __repr__(self):
         return f'<User {self.username}>'
@@ -104,11 +108,14 @@ def login():
         user = User.query.filter_by(username=username).first()
         if user and check_password_hash(user.password_hash, password):
             session['username'] = user.username
+            user.session_start = datetime.utcnow()
+            db.session.commit()
             return redirect(url_for('home'))
         else:
             flash("Invalid login credentials")
             return redirect(url_for('login'))
     return render_template('login.html')
+
 
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
@@ -181,8 +188,17 @@ def add_comment():
 
 @app.route('/logout')
 def logout():
-    session.pop('username', None)
+    if 'username' in session:
+        username = session['username']
+        user = User.query.filter_by(username=username).first()
+        if user and user.session_start:
+            session_duration = datetime.utcnow() - user.session_start
+            user.total_time += session_duration
+            user.session_start = None
+            db.session.commit()
+        session.pop('username', None)
     return redirect(url_for('home'))
+
 
 @app.errorhandler(413)
 def request_entity_too_large(error):
