@@ -79,17 +79,23 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        user = User.query.filter_by(username=username).first()
-        if user and check_password_hash(user.password_hash, password):
-            session['username'] = user.username
-            return redirect(url_for('home'))
-        else:
-            flash("Invalid login credentials")
-            return redirect(url_for('login'))
-    return render_template('login.html')
+    try:
+        if request.method == 'POST':
+            username = request.form['username']
+            password = request.form['password']
+            user = User.query.filter_by(username=username).first()
+            if user and check_password_hash(user.password_hash, password):
+                session['username'] = user.username
+                return redirect(url_for('profile'))
+            else:
+                flash("Invalid login credentials")
+                return redirect(url_for('login'))
+        return render_template('login.html')
+    except Exception as e:
+        app.logger.error(f"Error during login: {e}")
+        flash("An error occurred during login. Please try again.")
+        return redirect(url_for('login'))
+
 
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
