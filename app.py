@@ -6,7 +6,7 @@ import os
 import time
 
 app = Flask(__name__)
-app.secret_key = '1892'
+app.secret_key = '18921892'
 
 # Database setup
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -190,4 +190,5 @@ def request_entity_too_large(error):
     return redirect(url_for('profile')), 413
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
