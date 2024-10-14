@@ -28,12 +28,17 @@
         </nav>
     </header>
     <main>
+        <!-- Login Heading -->
         <h1>Login</h1>
+        <!-- Login Form -->
         <form method="POST" action="{{ url_for('login') }}">
+            <!-- Username Input -->
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
+            <!-- Password Input -->
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
+            <!-- Submit Button -->
             <button type="submit">Login</button>
         </form>
     </main>

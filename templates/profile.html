@@ -21,7 +21,9 @@
         </nav>
     </header>
     <main>
+        <!-- Profile Container -->
         <div class="profile-container">
+            <!-- Profile Picture -->
             <div class="profile-picture">
                 {% if user.profile_pic %}
                     <img src="{{ url_for('static', filename='uploads/' + user.profile_pic) }}" alt="Profile Picture">
@@ -29,10 +31,14 @@
                     <img src="{{ url_for('static', filename='logo.ico') }}" alt="Default Profile Picture">
                 {% endif %}
             </div>
+            <!-- Username -->
             <h2>{{ user.username }}</h2>
+            <!-- Email -->
             <h3>{{ user.email }}</h3>
+            <!-- Bio -->
             <p>{{ user.bio | safe }}</p>
         </div>
     </main>
+    
 </body>
 </html>
