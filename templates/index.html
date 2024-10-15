@@ -1,94 +1,48 @@
-<!DOCTYPE HTML>
-<html lang="en" style="font-family: montserrat;">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Just a helpful individual with a lot of knowledge of fixing and setting up your electronic needs">
-    <meta name="keywords" content="liam's tech help, tech, tech help, neath">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/nav.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
-    <title>Liam's Tech Help</title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.ico') }}">
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="{{ url_for('home') }}"><b>HOME</b></a></li>
-                <li><a href="{{ url_for('info') }}"><b>INFO</b></a></li>
-                <li><a href="{{ url_for('contact') }}"><b>CONTACT</b></a></li>
-                {% if logged_in %}
-                    <li><a href="{{ url_for('profile') }}"><b>PROFILE</b></a></li>
-                    <li><a href="{{ url_for('logout') }}"><b>LOGOUT</b></a></li>
-                {% else %}
-                    <li><a href="{{ url_for('register') }}"><b>REGISTER</b></a></li>
-                    <li><a href="{{ url_for('login') }}"><b>LOGIN</b></a></li>
-                {% endif %}
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <!-- Title Section -->
-        <div class="title">
-            <p class="title1"><b>Welcome to Liam's Tech Help!</b></p>
+{% extends "base.html" %}
+{% block content %}
+<div class="title">
+    <p class="title1"><b>Welcome to Liam's Tech Help!</b></p>
+</div>
+<div class="container">
+    <div class="text1">
+        <p>At first this page was made to freshen up on my <b>HTML, CSS</b> and <b>JS</b> but after realizing I didn't have an actual topic, I decided to turn it into a website for <b>Liam's Tech Help</b></p>
+    </div>
+    <div class="image1">
+        <img src="{{ url_for('static', filename='images/LTH.webp') }}" alt="Liam's Tech Help Logo" width="150vh">
+    </div>
+</div>
+
+<!-- Comment Section -->
+<div class="comment-section">
+    <div class="comments-grid">
+        <div class="comment-box prompt-box">
+            <p><b>Why not comment yourself!</b></p>
+            {% if logged_in %}
+                <form method="POST" action="{{ url_for('add_comment') }}" enctype="multipart/form-data">
+                    <div>
+                        <label for="content">Your Comment:</label>
+                        <textarea id="content" name="content" maxlength="200"></textarea>
+                    </div>
+                    <div>
+                        <label for="image">Upload an Image:</label>
+                        <input type="file" id="image" name="image" accept="image/*">
+                    </div>
+                    <button type="submit">Post</button>
+                </form>
+            {% else %}
+                <p><a href="{{ url_for('login') }}">Log in</a> or <a href="{{ url_for('register') }}">register</a> to comment.</p>
+            {% endif %}
         </div>
-        
-        <!-- Introduction Container -->
-        <div class="container">
-            <!-- Introduction Text -->
-            <div class="text1">
-                <p>At first this page was made to freshen up on my <b>HTML, CSS</b> and <b>JS</b> but after realizing I didn't have an actual topic, I decided to turn it into a website for <b>Liam's Tech Help</b></p>
-            </div>
-            <!-- Logo Image -->
-            <div class="image1">
-                <img src="{{ url_for('static', filename='images/LTH.webp') }}" alt="Liam's Tech Help Logo" width="150vh">
-            </div>
+        {% for comment in comments %}
+        <div class="comment-box">
+            <p><b>{{ comment.username }}</b></p>
+            <p>{{ comment.content }}</p>
+            {% if comment.image %}
+                <img src="{{ url_for('static', filename='uploads/' + comment.image) }}" alt="Comment Image" class="comment-image">
+            {% endif %}
+            <p><i>{{ comment.timestamp }}</i></p>
         </div>
-        
-        <!-- Comment Section -->
-        <div class="comment-section">
-            <div class="comments-grid">
-                <!-- Comment Prompt Box -->
-                <div class="comment-box prompt-box">
-                    <p><b>Why not comment yourself!</b></p>
-                    {% if logged_in %}
-                        <!-- Comment Form -->
-                        <form method="POST" action="{{ url_for('add_comment') }}" enctype="multipart/form-data">
-                            <!-- Text Area for Comment -->
-                            <div>
-                                <label for="content">Your Comment:</label>
-                                <textarea id="content" name="content" maxlength="200"></textarea>
-                            </div>
-                            <!-- Image Upload -->
-                            <div>
-                                <label for="image">Upload an Image:</label>
-                                <input type="file" id="image" name="image" accept="image/*">
-                            </div>
-                            <!-- Submit Button -->
-                            <button type="submit">Post</button>
-                        </form>
-                    {% else %}
-                        <!-- Prompt to Log in or Register -->
-                        <p><a href="{{ url_for('login') }}">Log in</a> or <a href="{{ url_for('register') }}">register</a> to comment.</p>
-                    {% endif %}
-                </div>
-                
-                <!-- Display Existing Comments -->
-                {% for comment in comments %}
-                <div class="comment-box">
-                    <p><b>{{ comment.username }}</b></p>
-                    <p>{{ comment.content }}</p>
-                    {% if comment.image %}
-                        <!-- Display Comment Image -->
-                        <img src="{{ url_for('static', filename='uploads/' + comment.image) }}" alt="Comment Image" class="comment-image">
-                    {% endif %}
-                    <p><i>{{ comment.timestamp }}</i></p>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </main>
-</body>
-</html>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

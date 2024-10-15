@@ -1,0 +1,270 @@
+/*Index */
+/* Title */
+.title {
+    border: 0.2em solid rgba(169, 169, 169, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3em;
+    margin-bottom: 0.5em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.title1 {
+    font-size: 4vh;
+    text-align: center;
+    margin: 0em;
+}
+
+/* First Box */
+.container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    border: 0.2em solid rgba(169, 169, 169, 0.25);
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 3em;
+    margin-bottom: 0.1em;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+}
+
+.text1 {
+    font-size: 2.5vh;
+    text-align: center;
+}
+
+.image1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Comment Section */
+.comment-section {
+    padding: 20px;
+    background-color: transparent; /* Transparent background */
+}
+
+.comments-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Adjust to fit 4 comment boxes */
+    gap: 20px;
+}
+
+.comment-box {
+    padding: 20px;
+    background-color: transparent; /* Transparent background */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Link Styling for Login/Register Prompt */
+.prompt-box p a {
+    color: orange; /* Orange color for links */
+    font-weight: bold; /* Bold text */
+    text-decoration: none; /* Remove underline */
+}
+
+.prompt-box p a:hover {
+    color: darkorange; /* Darker orange on hover */
+}
+
+/* General Input and Button Styling */
+textarea, input[type="file"], button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Comment Image */
+.comment-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
+
+/* Profile */
+/* Profile Container */
+.profile-container {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Profile Picture */
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* Edit Profile Button */
+.edit-profile-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.edit-profile-button:hover {
+    background-color: #0056b3;
+}
+
+/* Form Styling */
+form {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form textarea, form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
+
+/* Account Settings */
+/* Account Settings Container */
+.account-settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Account Settings Form Styling */
+.account-settings form {
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+    border: 1px solid white; /* Thin white border */
+    padding: 50px;
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center form elements */
+}
+
+.account-settings form h2 {
+    margin-bottom: 20px;
+}
+
+.account-settings form label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left; /* Align labels to the left */
+}
+
+.account-settings form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Submit Button Styling */
+.account-settings form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.account-settings form button:hover {
+    background-color: #555; /* Change color on hover */
+}
+
+/* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
+
+/* Login */
+/* Center the login form */
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Full viewport height */
+}
+
+/* Increase the size of the form and elements by 10% */
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form button {
+    font-size: 110%; /* Increase font size by 10% */
+    padding: 1.0em; /* Increase padding by 10% */
+}
+
+.login-form {
+    transform: scale(1.0); /* Scale the entire form by 10% */
+}
+
+/* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
+
+/* Register */
+/* Center the form */
+.centered-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Full viewport height */
+}
+
+/* Increase the size of the form elements by 10% */
+.centered-form input[type="text"],
+.centered-form input[type="email"],
+.centered-form input[type="password"],
+.centered-form button {
+    font-size: 110%; /* Increase font size by 10% */
+    padding: 1.0em; /* Increase padding by 10% */
+}
+
+.centered-form {
+    transform: scale(1.0); /* Scale the entire form by 10% */
+}
+
