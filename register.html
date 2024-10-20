@@ -8,6 +8,24 @@
     <link rel="stylesheet" href="base/header.css">
     <link rel="stylesheet" href="base/main.css">
     <link rel="stylesheet" href="base/styles.css">
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+    <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAujO7eCE3cq0j2nQg5P-SN34CcC50xyJw",
+        authDomain: "lth-db.firebaseapp.com",
+        projectId: "lth-db",
+        storageBucket: "lth-db.appspot.com",
+        messagingSenderId: "824791615094",
+        appId: "1:824791615094:web:d508a2331898280e1cc157",
+        measurementId: "G-SGCY71EEJW"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    </script>
 </head>
 <body>
     <header>
@@ -22,19 +40,31 @@
     <main>
         <div class="register">
             <h1>Register</h1>
-            <form method="POST" action="register">
+            <form onsubmit="signUp(); return false;">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
-                
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-                
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
-        
                 <button type="submit">Register</button>
             </form>
+            
         </div>
     </main>
+    <script>
+        function signUp() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log('User signed up:', user);
+                })
+                .catch((error) => {
+                    console.error('Error signing up:', error);
+                });
+        }
+    </script>        
 </body>
 </html>
