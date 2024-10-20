@@ -1,18 +1,40 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="register">
-    <h1>Register</h1>
-    <form method="POST" action="register">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registering</title>
+    <link rel="stylesheet" href="base/nav.css">
+    <link rel="stylesheet" href="base/header.css">
+    <link rel="stylesheet" href="base/main.css">
+    <link rel="stylesheet" href="base/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="register">
+            <h1>Register</h1>
+            <form method="POST" action="register">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
         
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-
-        <button type="submit">Register</button>
-    </form>
-</div>
-{% endblock %}
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

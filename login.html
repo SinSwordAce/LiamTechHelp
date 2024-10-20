@@ -1,15 +1,37 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="login">
-    <h1>Login</h1>
-    <form method="POST" action="login">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="base/nav.css">
+    <link rel="stylesheet" href="base/header.css">
+    <link rel="stylesheet" href="base/main.css">
+    <link rel="stylesheet" href="base/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="login">
+            <h1>Login</h1>
+            <form method="POST" action="login">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
         
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-
-        <button type="submit">Login</button>
-    </form>
-</div>
-{% endblock %}
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
