@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registering</title>
+    <title>Register</title>
     <link rel="stylesheet" href="base/nav.css">
     <link rel="stylesheet" href="base/header.css">
     <link rel="stylesheet" href="base/main.css">
     <link rel="stylesheet" href="base/styles.css">
-    <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
     <script>
     // Your web app's Firebase configuration
     const firebaseConfig = {
@@ -25,6 +23,21 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
+
+    function signUp(event) {
+        event.preventDefault();  // Prevent form submission
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                console.log('User signed up:', userCredential.user);
+                // Optional: Redirect to login or profile page
+            })
+            .catch((error) => {
+                console.error('Error signing up:', error);
+                // Display error message to the user
+            });
+    }
     </script>
 </head>
 <body>
@@ -40,31 +53,19 @@
     <main>
         <div class="register">
             <h1>Register</h1>
-            <form onsubmit="signUp(); return false;">
+            <form onsubmit="signUp(event); return false;">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
+                
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
+                
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
+
                 <button type="submit">Register</button>
             </form>
-            
         </div>
     </main>
-    <script>
-        function signUp() {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            firebase.auth().createUserWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    const user = userCredential.user;
-                    console.log('User signed up:', user);
-                })
-                .catch((error) => {
-                    console.error('Error signing up:', error);
-                });
-        }
-    </script>        
 </body>
 </html>
