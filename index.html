@@ -1,40 +1,62 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="title">
-    <p class="title1"><b>Welcome to Liam's Tech Help!</b></p>
-</div>
-<div class="container">
-    <div class="text1">
-        <p>At first this page was made to freshen up on my <b>HTML, CSS</b> and <b>JS</b> but after realizing I didn't have an actual topic, I decided to turn it into a website for <b>Liam's Tech Help</b></p>
-    </div>
-    <div class="image1">
-        <img src="images/LTH.webp" alt="Liam's Tech Help Logo" width="150">
-    </div>
-</div>
-<!-- Comment Section -->
-<div class="comment-section">
-    <div class="comments-grid">
-        <div class="comment-box prompt-box">
-            <p><b>Why not comment yourself!</b></p>
-            <form method="POST" action="add_comment" enctype="multipart/form-data">
-                <div>
-                    <label for="content">Your Comment:</label>
-                    <textarea id="content" name="content" maxlength="200"></textarea>
-                </div>
-                <div>
-                    <label for="image">Upload an Image:</label>
-                    <input type="file" id="image" name="image" accept="image/*">
-                </div>
-                <button type="submit">Post</button>
-            </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Liam's Tech Help</title>
+    <link rel="stylesheet" href="base/nav.css">
+    <link rel="stylesheet" href="base/header.css">
+    <link rel="stylesheet" href="base/main.css">
+    <link rel="stylesheet" href="base/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="title">
+            <p class="title1"><b>Welcome to Liam's Tech Help!</b></p>
         </div>
-        <!-- Example comments -->
-        <div class="comment-box">
-            <p><b>Username</b></p>
-            <p>This is a comment.</p>
-            <img src="uploads/comment_image.png" alt="Comment Image" class="comment-image">
-            <p><i>Timestamp</i></p>
+        <div class="container">
+            <div class="text1">
+                <p>At first this page was made to freshen up on my <b>HTML, CSS</b> and <b>JS</b> but after realizing I didn't have an actual topic, I decided to turn it into a website for <b>Liam's Tech Help</b></p>
+            </div>
+            <div class="image1">
+                <img src="images/LTH.webp" alt="Liam's Tech Help Logo" width="150">
+            </div>
         </div>
-    </div>
-</div>
-{% endblock %}
+        <!-- Comment Section -->
+        <div class="comment-section">
+            <div class="comments-grid">
+                <div class="comment-box prompt-box">
+                    <p><b>Why not comment yourself!</b></p>
+                    <form method="POST" action="add_comment" enctype="multipart/form-data">
+                        <div>
+                            <label for="content">Your Comment:</label>
+                            <textarea id="content" name="content" maxlength="200"></textarea>
+                        </div>
+                        <div>
+                            <label for="image">Upload an Image:</label>
+                            <input type="file" id="image" name="image" accept="image/*">
+                        </div>
+                        <button type="submit">Post</button>
+                    </form>
+                </div>
+                <!-- Example comments -->
+                <div class="comment-box">
+                    <p><b>Username</b></p>
+                    <p>This is a comment.</p>
+                    <img src="uploads/comment_image.png" alt="Comment Image" class="comment-image">
+                    <p><i>Timestamp</i></p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
